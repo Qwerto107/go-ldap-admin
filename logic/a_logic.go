@@ -104,7 +104,7 @@ func CommonAddUser(user *model.User, groups []*model.Group) error {
 		}
 	}
 	if user.JobNumber == "" {
-		user.JobNumber = "0000"
+		user.JobNumber = ""
 	}
 	if user.Departments == "" {
 		user.Departments = ""
