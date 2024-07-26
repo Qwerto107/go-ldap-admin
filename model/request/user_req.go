@@ -7,11 +7,11 @@ type UserAddReq struct {
 	Nickname      string `json:"nickname" validate:"required,min=0,max=50"`
 	GivenName     string `json:"givenName" validate:"min=0,max=50"`
 	Mail          string `json:"mail" validate:"required,min=0,max=100"`
-	JobNumber     string `json:"jobNumber" validate:"required,min=0,max=20"`
+	JobNumber     string `json:"jobNumber" validate:"min=0,max=20"`
 	PostalAddress string `json:"postalAddress" validate:"min=0,max=255"`
 	Departments   string `json:"departments" validate:"min=0,max=512"`
 	Position      string `json:"position" validate:"min=0,max=128"`
-	Mobile        string `json:"mobile" validate:"required,checkMobile"`
+	Mobile        string `json:"mobile"`
 	Avatar        string `json:"avatar"`
 	Introduction  string `json:"introduction" validate:"min=0,max=255"`
 	Status        uint   `json:"status" validate:"oneof=1 2"`
