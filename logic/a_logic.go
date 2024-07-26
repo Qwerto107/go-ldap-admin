@@ -87,7 +87,7 @@ func CommonUpdateGroup(oldGroup, newGroup *model.Group) error {
 func CommonAddUser(user *model.User, groups []*model.Group) error {
 	// 用户信息的预置处理
 	if user.Nickname == "" {
-		user.Nickname = "佚名"
+		user.Nickname = ""
 	}
 	if user.GivenName == "" {
 		user.GivenName = user.Nickname
@@ -107,13 +107,13 @@ func CommonAddUser(user *model.User, groups []*model.Group) error {
 		user.JobNumber = "0000"
 	}
 	if user.Departments == "" {
-		user.Departments = "默认:研发中心"
+		user.Departments = ""
 	}
 	if user.Position == "" {
-		user.Position = "默认:打工人"
+		user.Position = ""
 	}
 	if user.PostalAddress == "" {
-		user.PostalAddress = "默认:地球"
+		user.PostalAddress = ""
 	}
 	if user.Mobile == "" {
 		user.Mobile = generateMobile()
