@@ -148,22 +148,22 @@ func (d OpenLdapLogic) AddUsers(user *model.User) error {
 	// 根据 user_dn 查询用户,不存在则创建
 	if !isql.User.Exist(tools.H{"user_dn": user.UserDN}) {
 		if user.Departments == "" {
-			user.Departments = "默认:研发中心"
+			user.Departments = ""
 		}
 		if user.GivenName == "" {
 			user.GivenName = user.Nickname
 		}
 		if user.PostalAddress == "" {
-			user.PostalAddress = "默认:地球"
+			user.PostalAddress = ""
 		}
 		if user.Position == "" {
-			user.Position = "默认:技术"
+			user.Position = ""
 		}
 		if user.Introduction == "" {
 			user.Introduction = user.Nickname
 		}
 		if user.JobNumber == "" {
-			user.JobNumber = "未启用"
+			user.JobNumber = ""
 		}
 		// 先将用户添加到MySQL
 		err := isql.User.Add(user)
